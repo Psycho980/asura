@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manga Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .chapter-link:hover {
+            text-decoration: underline;
+        }
+
+        .card {
+            --background: linear-gradient(to right, #13b37f 0%, #11a3c8 100%);
+            width: 140px;
+            height: 180px;
+            padding: 0.9px;
+            border-radius: 0.7rem;
+            overflow: visible;
+            background: #f7ba2b;
+            background: var(--background);
+            position: relative;
+            z-index: 1;
+        }
+
+        .card::after {
+            position: absolute;
+            content: "";
+            top: -22px;
+            left: 0px;
+            right: 0;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            transform: scale(0.76);
+            filter: blur(34.5px);
+            background: #f7ba2b;
+            background: var(--background);
+            transition: opacity 0.5s;
+        }
+
+        .card-info {
+            --color: #1f1a1d;
+            background: var(--color);
+            color: var(--color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+            border-radius: 0.7rem;
+        }
+
+        .card .title {
+            font-weight: light;
+            letter-spacing: 0.2em;
+        }
+
+        /* Hover */
+        .card:hover::after {
+            opacity: 0.6;
+            padding: 0.7rem 0;
+            top: 18px;
+            transition: 0.6s;
+        }
+
+        .card:hover .card-info {
+            color: #fff9f9;
+            transition: color 1s;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="container mx-auto p-4">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-center mb-2">Bypass Asura</h1>
+            <p class="text-gray-400 text-center">Made by l3v2s on discord</p>
+        </header>
+
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-xl font-bold">Latest Chapters</h2>
+            <div class="flex space-x-4">
+                <select id="seriesFilter" class="bg-gray-800 text-white px-4 py-2 rounded">
+                    <option value="all">All Series</option>
+                </select>
+                <button id="refreshButton" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded flex items-center">
+                    <i class="fas fa-sync-alt mr-2"></i> Refresh
+                </button>
+            </div>
+        </div>
+
+        <div id="mangaGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Manga items will be populated here by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // Function to load the state.json file and display manga
+        async function loadMangaList() {
+            try {
+                const response = await fetch('state.json');
+                if (!response.ok) {
+                    throw new Error('Failed to load manga data');
+                }
+                
+                const data = await response.json();
+                const downloadedChapters = data.downloadedChapters || {};
+                
+                // Process the data
+                const seriesMap = {};
+                
+                // Group chapters by series
+                Object.entries(downloadedChapters).forEach(([key, chapter]) => {
+                    const [seriesName, chapterNumber] = key.split('_');
+                    const timestamp = new Date(chapter.timestamp);
+                    
+                    if (!seriesMap[seriesName]) {
+                        seriesMap[seriesName] = [];
+                    }
+                    
+                    seriesMap[seriesName].push({
+                        chapterNumber,
+                        timestamp,
+                        formattedTime: getTimeAgo(timestamp),
+                        path: chapter.path.replace(/\\/g, '/'),
+                        imageCount: chapter.imageCount
+                    });
+                });
+                
+                // Sort chapters within each series by chapter number (newest first)
+                Object.values(seriesMap).forEach(chapters => {
+                    chapters.sort((a, b) => {
+                        // Try to compare as numbers if possible
+                        const numA = parseInt(a.chapterNumber);
+                        const numB = parseInt(b.chapterNumber);
+                        
+                        if (!isNaN(numA) && !isNaN(numB)) {
+                            return numB - numA; // Descending order
+                        }
+                        
+                        // Fall back to string comparison
+                        return b.chapterNumber.localeCompare(a.chapterNumber);
+                    });
+                });
+                
+                // Sort series by most recent chapter
+                const sortedSeries = Object.entries(seriesMap).sort((a, b) => {
+                    const latestA = a[1][0].timestamp;
+                    const latestB = b[1][0].timestamp;
+                    return latestB - latestA;
+                });
+                
+                // Populate the filter dropdown
+                const filterSelect = document.getElementById('seriesFilter');
+                filterSelect.innerHTML = '<option value="all">All Series</option>';
+                
+                sortedSeries.forEach(([seriesName]) => {
+                    const formattedName = formatSeriesName(seriesName);
+                    const option = document.createElement('option');
+                    option.value = seriesName;
+                    option.textContent = formattedName;
+                    filterSelect.appendChild(option);
+                });
+                
+                // Display the manga
+                displayManga(sortedSeries);
+                
+                // Set up event listeners
+                filterSelect.addEventListener('change', () => {
+                    const selectedSeries = filterSelect.value;
+                    if (selectedSeries === 'all') {
+                        displayManga(sortedSeries);
+                    } else {
+                        const filtered = sortedSeries.filter(([series]) => series === selectedSeries);
+                        displayManga(filtered);
+                    }
+                });
+                
+                document.getElementById('refreshButton').addEventListener('click', () => {
+                    loadMangaList();
+                });
+                
+            } catch (error) {
+                console.error('Error loading manga list:', error);
+                document.getElementById('mangaGrid').innerHTML = `
+                    <div class="col-span-full text-center p-8 bg-red-900 bg-opacity-30 rounded">
+                        <p class="text-xl">Failed to load manga data. Please check that state.json exists.</p>
+                        <p class="mt-2 text-gray-400">${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+        
+        // Function to display manga in the grid
+        function displayManga(seriesList) {
+            const mangaGrid = document.getElementById('mangaGrid');
+            mangaGrid.innerHTML = '';
+            
+            if (seriesList.length === 0) {
+                mangaGrid.innerHTML = `
+                    <div class="col-span-full text-center p-8 bg-gray-800 rounded">
+                        <p class="text-xl">No manga chapters found.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            seriesList.forEach(([seriesName, chapters]) => {
+                const formattedName = formatSeriesName(seriesName);
+                const seriesDiv = document.createElement('div');
+                seriesDiv.className = 'bg-gray-800 rounded-lg p-4 flex space-x-4';
+                
+                // Create the card with a default symbol instead of a cover image
+                const card = document.createElement('div');
+                card.className = 'card';
+                
+                const cardInfo = document.createElement('div');
+                cardInfo.className = 'card-info';
+                const img = document.createElement('img');
+                img.src = 'cover.jpg'
+                card.appendChild(cardInfo);
+                
+                // Create content div
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'flex-1';
+                
+                // Create series title
+                const title = document.createElement('h2');
+                title.className = 'text-lg font-bold mb-2 text-purple-300';
+                title.textContent = formattedName;
+                
+                // Create chapter list
+                const chapterList = document.createElement('ul');
+                chapterList.className = 'text-sm space-y-2';
+                
+                // Only show up to 3 most recent chapters
+                chapters.slice(0, 3).forEach(chapter => {
+                    const chapterItem = document.createElement('li');
+                    chapterItem.className = 'flex items-center justify-between';
+                    
+                    // Create the link to the HTML file in the chapter's folder
+                    const chapterPath = chapter.path;
+                    const htmlLink = `${chapterPath}/${seriesName.toLowerCase().replace(/\s+/g, '_')}_chapter_${chapter.chapterNumber}.html`;
+                    
+                    chapterItem.innerHTML = `
+                        <a href="${htmlLink}" class="text-purple-500 hover:text-purple-400 chapter-link">
+                            • Chapter ${chapter.chapterNumber}
+                        </a>
+                        <span class="text-gray-400">${chapter.formattedTime}</span>
+                    `;
+                    
+                    chapterList.appendChild(chapterItem);
+                });
+                
+                // Assemble the manga item
+                contentDiv.appendChild(title);
+                contentDiv.appendChild(chapterList);
+                
+                seriesDiv.appendChild(card);
+                seriesDiv.appendChild(contentDiv);
+                
+                mangaGrid.appendChild(seriesDiv);
+            });
+        }
+        
+        // Helper function to format series name (convert from snake_case to Title Case)
+        function formatSeriesName(seriesName) {
+            if (seriesName === 'Unknown Series') return seriesName;
+            
+            return seriesName
+                .split('_')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ');
+        }
+        
+        // Helper function to format timestamps as "X time ago"
+        function getTimeAgo(timestamp) {
+            const now = new Date();
+            const diff = now - timestamp;
+            
+            const minutes = Math.floor(diff / 60000);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+            
+            if (days > 0) {
+                return `${days} day${days > 1 ? 's' : ''} ago`;
+            } else if (hours > 0) {
+                return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+            } else if (minutes > 0) {
+                return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+            } else {
+                return 'just now';
+            }
+        }
+        
+        // Load manga list when the page loads
+        document.addEventListener('DOMContentLoaded', loadMangaList);
+    </script>
+</body>
+</html>
