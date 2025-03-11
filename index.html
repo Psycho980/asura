@@ -100,7 +100,7 @@
         // Function to load the state.json file and display manga
         async function loadMangaList() {
             try {
-                const response = await fetch(/state.json);
+                const response = await fetch("state.json");
                 if (!response.ok) {
                     throw new Error('Failed to load manga data(status: ' + response.status + ')');
                 }
