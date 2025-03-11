@@ -129,14 +129,11 @@
                     seriesMap[seriesName] = [];
                 }
                 
-                // Check if path exists before using replace
-                const path = chapter.path ? chapter.path.replace(/\\/g, '/') : '';
-                
                 seriesMap[seriesName].push({
                     chapterNumber,
                     timestamp,
                     formattedTime: getTimeAgo(timestamp),
-                    path: path,
+                    githubPath: chapter.githubPath || '',
                     imageCount: chapter.imageCount || 0
                 });
             });
@@ -259,14 +256,13 @@
                 const chapterItem = document.createElement('li');
                 chapterItem.className = 'flex items-center justify-between';
                 
-                // Create the link to the HTML file in the chapter's folder - with defensive check for path
-                const chapterPath = chapter.path || '';
-                const htmlLink = chapterPath ? 
-                    `./${chapterPath}/${seriesName.toLowerCase().replace(/\s+/g, '_')}_chapter_${chapter.chapterNumber}.html` :
-                    '#'; // Fallback link
+                // Create the link using the githubPath
+                const chapterLink = chapter.githubPath ? 
+                    `/${chapter.githubPath}` : 
+                    '#'; // Fallback link if no githubPath
                 
                 chapterItem.innerHTML = `
-                    <a href="${htmlLink}" class="text-purple-500 hover:text-purple-400 chapter-link">
+                    <a href="${chapterLink}" class="text-purple-500 hover:text-purple-400 chapter-link">
                         • Chapter ${chapter.chapterNumber}
                     </a>
                     <span class="text-gray-400">${chapter.formattedTime}</span>
