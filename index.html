@@ -97,7 +97,7 @@
         </div>
     </div>
 
-    <script>
+<script>
     // Function to load the state.json file and display manga
     async function loadMangaList() {
         try {
@@ -232,20 +232,13 @@
             const seriesDiv = document.createElement('div');
             seriesDiv.className = 'bg-gray-800 rounded-lg p-4 flex space-x-4';
             
-            // Create the card with black background
+            // Create the card with a default symbol instead of a cover image
             const card = document.createElement('div');
             card.className = 'card';
             
             const cardInfo = document.createElement('div');
             cardInfo.className = 'card-info';
-            cardInfo.style.backgroundColor = '#000'; // Make it black
-            
-            // Add first letter of series name as text
-            const letterSpan = document.createElement('span');
-            letterSpan.textContent = formattedName.charAt(0);
-            letterSpan.className = 'text-white text-3xl font-bold';
-            cardInfo.appendChild(letterSpan);
-            
+            // Keep it empty and black as requested
             card.appendChild(cardInfo);
             
             // Create content div
@@ -325,6 +318,6 @@
     
     // Load manga list when the page loads
     document.addEventListener('DOMContentLoaded', loadMangaList);
-    </script>
+</script>
 </body>
 </html>
