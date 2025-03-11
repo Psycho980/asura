@@ -1,5 +1,5 @@
 {
-  "lastStartNumber": 279735,
+  "lastStartNumber": 279745,
   "downloadedChapters": {
     "Revenge of the Iron-Blooded Swordhound_103": {
       "timestamp": "2025-03-11T21:57:52.680584",
@@ -105,6 +105,11 @@
       "timestamp": "2025-03-12T01:11:20.927775",
       "imageCount": 11,
       "githubPath": "series/unknown_series/chapter_193"
+    },
+    "The Priest of Corruption_79": {
+      "timestamp": "2025-03-12T01:21:26.015732",
+      "imageCount": 10,
+      "githubPath": "series/the_priest_of_corruption/chapter_79"
     }
   }
 }
