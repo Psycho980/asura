@@ -1,5 +1,5 @@
 {
-  "lastStartNumber": 279525,
+  "lastStartNumber": 279542,
   "downloadedChapters": {
     "Revenge of the Iron-Blooded Swordhound_103": {
       "timestamp": "2025-03-11T21:57:52.680584",
@@ -45,6 +45,11 @@
       "timestamp": "2025-03-11T23:44:18.613805",
       "imageCount": 11,
       "githubPath": "series/somebody_stop_the_pope/chapter_32"
+    },
+    "The Extra's Academy Survival Guide_68": {
+      "timestamp": "2025-03-12T00:07:24.327428",
+      "imageCount": 17,
+      "githubPath": "series/the_extra_s_academy_survival_guide/chapter_68"
     }
   }
 }
