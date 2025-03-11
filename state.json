@@ -1,5 +1,5 @@
 {
-  "lastStartNumber": 279579,
+  "lastStartNumber": 279592,
   "downloadedChapters": {
     "Revenge of the Iron-Blooded Swordhound_103": {
       "timestamp": "2025-03-11T21:57:52.680584",
@@ -65,6 +65,11 @@
       "timestamp": "2025-03-12T00:27:01.003999",
       "imageCount": 14,
       "githubPath": "series/myst__might__mayhem/chapter_64"
+    },
+    "The Indomitable Martial King_72": {
+      "timestamp": "2025-03-12T00:33:39.085604",
+      "imageCount": 13,
+      "githubPath": "series/the_indomitable_martial_king/chapter_72"
     }
   }
 }
