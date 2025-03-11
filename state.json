@@ -1,5 +1,5 @@
 {
-  "lastStartNumber": 279341,
+  "lastStartNumber": 279357,
   "downloadedChapters": {
     "Revenge of the Iron-Blooded Swordhound_103": {
       "timestamp": "2025-03-11T21:57:52.680584",
@@ -20,6 +20,11 @@
       "timestamp": "2025-03-11T22:11:25.948283",
       "imageCount": 12,
       "githubPath": "series/unknown_series/chapter_65"
+    },
+    "Unknown Series_unknown": {
+      "timestamp": "2025-03-11T22:19:10.635308",
+      "imageCount": 16,
+      "githubPath": "series/unknown_series/chapter_unknown"
     }
   }
 }
