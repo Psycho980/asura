@@ -1,5 +1,5 @@
 {
-  "lastStartNumber": 279485,
+  "lastStartNumber": 279496,
   "downloadedChapters": {
     "Revenge of the Iron-Blooded Swordhound_103": {
       "timestamp": "2025-03-11T21:57:52.680584",
@@ -40,6 +40,11 @@
       "timestamp": "2025-03-11T23:13:17.849011",
       "imageCount": 14,
       "githubPath": "series/emperor_of_steel/chapter_31"
+    },
+    "Somebody Stop the Pope_32": {
+      "timestamp": "2025-03-11T23:44:18.613805",
+      "imageCount": 11,
+      "githubPath": "series/somebody_stop_the_pope/chapter_32"
     }
   }
 }
