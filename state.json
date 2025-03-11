@@ -1,5 +1,5 @@
 {
-  "lastStartNumber": 279554,
+  "lastStartNumber": 279565,
   "downloadedChapters": {
     "Revenge of the Iron-Blooded Swordhound_103": {
       "timestamp": "2025-03-11T21:57:52.680584",
@@ -55,6 +55,11 @@
       "timestamp": "2025-03-12T00:13:56.097835",
       "imageCount": 12,
       "githubPath": "series/unknown_series/chapter_89"
+    },
+    "Youngest Scion of the Mages_88": {
+      "timestamp": "2025-03-12T00:20:18.837562",
+      "imageCount": 11,
+      "githubPath": "series/youngest_scion_of_the_mages/chapter_88"
     }
   }
 }
