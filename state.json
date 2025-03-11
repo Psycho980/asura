@@ -1,5 +1,5 @@
 {
-  "lastStartNumber": 279565,
+  "lastStartNumber": 279579,
   "downloadedChapters": {
     "Revenge of the Iron-Blooded Swordhound_103": {
       "timestamp": "2025-03-11T21:57:52.680584",
@@ -60,6 +60,11 @@
       "timestamp": "2025-03-12T00:20:18.837562",
       "imageCount": 11,
       "githubPath": "series/youngest_scion_of_the_mages/chapter_88"
+    },
+    "Myst, Might, Mayhem_64": {
+      "timestamp": "2025-03-12T00:27:01.003999",
+      "imageCount": 14,
+      "githubPath": "series/myst__might__mayhem/chapter_64"
     }
   }
 }
