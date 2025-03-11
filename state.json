@@ -1,5 +1,5 @@
 {
-  "lastStartNumber": 279415,
+  "lastStartNumber": 279432,
   "downloadedChapters": {
     "Revenge of the Iron-Blooded Swordhound_103": {
       "timestamp": "2025-03-11T21:57:52.680584",
@@ -30,6 +30,11 @@
       "timestamp": "2025-03-11T22:32:59.273606",
       "imageCount": 12,
       "githubPath": "series/the_tutorial_is_too_hard/chapter_208"
+    },
+    "Standard of Reincarnation_134": {
+      "timestamp": "2025-03-11T23:01:59.983619",
+      "imageCount": 16,
+      "githubPath": "series/standard_of_reincarnation/chapter_134"
     }
   }
 }
