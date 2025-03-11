@@ -98,215 +98,228 @@
     </div>
 
     <script>
-        // Function to load the state.json file and display manga
-        async function loadMangaList() {
-            try {
-                const response = await fetch("state.json");
-                if (!response.ok) {
-                    throw new Error('Failed to load manga data(status: ' + response.status + ')');
+    // Function to load the state.json file and display manga
+    async function loadMangaList() {
+        try {
+            const response = await fetch("state.json");
+            if (!response.ok) {
+                throw new Error('Failed to load manga data(status: ' + response.status + ')');
+            }
+            
+            const data = await response.json();
+            const downloadedChapters = data.downloadedChapters || {};
+            
+            // Process the data
+            const seriesMap = {};
+            
+            // Group chapters by series
+            Object.entries(downloadedChapters).forEach(([key, chapter]) => {
+                // Skip invalid entries
+                if (!chapter || typeof chapter !== 'object') {
+                    console.warn(`Skipping invalid chapter entry for key: ${key}`);
+                    return;
                 }
                 
-                const data = await response.json();
-                const downloadedChapters = data.downloadedChapters || {};
+                const [seriesName, chapterNumber] = key.split('_');
                 
-                // Process the data
-                const seriesMap = {};
+                // Check if chapter has a valid timestamp
+                const timestamp = chapter.timestamp ? new Date(chapter.timestamp) : new Date();
                 
-                // Group chapters by series
-                Object.entries(downloadedChapters).forEach(([key, chapter]) => {
-                    const [seriesName, chapterNumber] = key.split('_');
-                    const timestamp = new Date(chapter.timestamp);
+                if (!seriesMap[seriesName]) {
+                    seriesMap[seriesName] = [];
+                }
+                
+                // Check if path exists before using replace
+                const path = chapter.path ? chapter.path.replace(/\\/g, '/') : '';
+                
+                seriesMap[seriesName].push({
+                    chapterNumber,
+                    timestamp,
+                    formattedTime: getTimeAgo(timestamp),
+                    path: path,
+                    imageCount: chapter.imageCount || 0
+                });
+            });
+            
+            // Sort chapters within each series by chapter number (newest first)
+            Object.values(seriesMap).forEach(chapters => {
+                chapters.sort((a, b) => {
+                    // Try to compare as numbers if possible
+                    const numA = parseInt(a.chapterNumber);
+                    const numB = parseInt(b.chapterNumber);
                     
-                    if (!seriesMap[seriesName]) {
-                        seriesMap[seriesName] = [];
+                    if (!isNaN(numA) && !isNaN(numB)) {
+                        return numB - numA; // Descending order
                     }
                     
-                    seriesMap[seriesName].push({
-                        chapterNumber,
-                        timestamp,
-                        formattedTime: getTimeAgo(timestamp),
-                        path: chapter.path.replace(/\\/g, '/'),
-                        imageCount: chapter.imageCount
-                    });
+                    // Fall back to string comparison
+                    return b.chapterNumber.localeCompare(a.chapterNumber);
                 });
-                
-                // Sort chapters within each series by chapter number (newest first)
-                Object.values(seriesMap).forEach(chapters => {
-                    chapters.sort((a, b) => {
-                        // Try to compare as numbers if possible
-                        const numA = parseInt(a.chapterNumber);
-                        const numB = parseInt(b.chapterNumber);
-                        
-                        if (!isNaN(numA) && !isNaN(numB)) {
-                            return numB - numA; // Descending order
-                        }
-                        
-                        // Fall back to string comparison
-                        return b.chapterNumber.localeCompare(a.chapterNumber);
-                    });
-                });
-                
-                // Sort series by most recent chapter
-                const sortedSeries = Object.entries(seriesMap).sort((a, b) => {
-                    const latestA = a[1][0].timestamp;
-                    const latestB = b[1][0].timestamp;
-                    return latestB - latestA;
-                });
-                
-                // Populate the filter dropdown
-                const filterSelect = document.getElementById('seriesFilter');
-                filterSelect.innerHTML = '<option value="all">All Series</option>';
-                
-                sortedSeries.forEach(([seriesName]) => {
-                    const formattedName = formatSeriesName(seriesName);
-                    const option = document.createElement('option');
-                    option.value = seriesName;
-                    option.textContent = formattedName;
-                    filterSelect.appendChild(option);
-                });
-                
-                // Display the manga
-                displayManga(sortedSeries);
-                
-                // Set up event listeners
-                filterSelect.addEventListener('change', () => {
-                    const selectedSeries = filterSelect.value;
-                    if (selectedSeries === 'all') {
-                        displayManga(sortedSeries);
-                    } else {
-                        const filtered = sortedSeries.filter(([series]) => series === selectedSeries);
-                        displayManga(filtered);
-                    }
-                });
-                
-                document.getElementById('refreshButton').addEventListener('click', () => {
-                    loadMangaList();
-                });
-                
-            } catch (error) {
-                console.error('Error loading manga list:', error);
-                document.getElementById('mangaGrid').innerHTML = `
-                    <div class="col-span-full text-center p-8 bg-red-900 bg-opacity-30 rounded">
-                        <p class="text-xl">Failed to load manga data. Please check that state.json exists.</p>
-                        <p class="mt-2 text-gray-400">${error.message}</p>
-                        <button id="retryButton" class="mt-4 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded">
-                            Retry Loading
-                        </button>   
-                    </div>
-                `;
-
-                // retry button 
-                document.getElementById('retryButton').addEventListener('click', () => {
-                    loadMangaList();
-                });
-            }
-        }
-    
-        
-        // Function to display manga in the grid
-        function displayManga(seriesList) {
-            const mangaGrid = document.getElementById('mangaGrid');
-            mangaGrid.innerHTML = '';
+            });
             
-            if (seriesList.length === 0) {
-                mangaGrid.innerHTML = `
-                    <div class="col-span-full text-center p-8 bg-gray-800 rounded">
-                        <p class="text-xl">No manga chapters found.</p>
-                    </div>
-                `;
-                return;
-            }
+            // Sort series by most recent chapter
+            const sortedSeries = Object.entries(seriesMap).sort((a, b) => {
+                const latestA = a[1][0].timestamp;
+                const latestB = b[1][0].timestamp;
+                return latestB - latestA;
+            });
             
-            seriesList.forEach(([seriesName, chapters]) => {
+            // Populate the filter dropdown
+            const filterSelect = document.getElementById('seriesFilter');
+            filterSelect.innerHTML = '<option value="all">All Series</option>';
+            
+            sortedSeries.forEach(([seriesName]) => {
                 const formattedName = formatSeriesName(seriesName);
-                const seriesDiv = document.createElement('div');
-                seriesDiv.className = 'bg-gray-800 rounded-lg p-4 flex space-x-4';
-                
-                // Create the card with a default symbol instead of a cover image
-                const card = document.createElement('div');
-                card.className = 'card';
-                
-                const cardInfo = document.createElement('div');
-                cardInfo.className = 'card-info';
-                const img = document.createElement('img');
-                img.src = 'cover.jpg'
-                card.appendChild(cardInfo);
-                
-                // Create content div
-                const contentDiv = document.createElement('div');
-                contentDiv.className = 'flex-1';
-                
-                // Create series title
-                const title = document.createElement('h2');
-                title.className = 'text-lg font-bold mb-2 text-purple-300';
-                title.textContent = formattedName;
-                
-                // Create chapter list
-                const chapterList = document.createElement('ul');
-                chapterList.className = 'text-sm space-y-2';
-                
-                // Only show up to 3 most recent chapters
-                chapters.slice(0, 3).forEach(chapter => {
-                    const chapterItem = document.createElement('li');
-                    chapterItem.className = 'flex items-center justify-between';
-                    
-                    // Create the link to the HTML file in the chapter's folder
-                    const chapterPath = chapter.path;
-                    const htmlLink = `./${chapterPath}/${seriesName.toLowerCase().replace(/\s+/g, '_')}_chapter_${chapter.chapterNumber}.html`;
-                    
-                    chapterItem.innerHTML = `
-                        <a href="${htmlLink}" class="text-purple-500 hover:text-purple-400 chapter-link">
-                            • Chapter ${chapter.chapterNumber}
-                        </a>
-                        <span class="text-gray-400">${chapter.formattedTime}</span>
-                    `;
-                    
-                    chapterList.appendChild(chapterItem);
-                });
-                
-                // Assemble the manga item
-                contentDiv.appendChild(title);
-                contentDiv.appendChild(chapterList);
-                
-                seriesDiv.appendChild(card);
-                seriesDiv.appendChild(contentDiv);
-                
-                mangaGrid.appendChild(seriesDiv);
+                const option = document.createElement('option');
+                option.value = seriesName;
+                option.textContent = formattedName;
+                filterSelect.appendChild(option);
+            });
+            
+            // Display the manga
+            displayManga(sortedSeries);
+            
+            // Set up event listeners
+            filterSelect.addEventListener('change', () => {
+                const selectedSeries = filterSelect.value;
+                if (selectedSeries === 'all') {
+                    displayManga(sortedSeries);
+                } else {
+                    const filtered = sortedSeries.filter(([series]) => series === selectedSeries);
+                    displayManga(filtered);
+                }
+            });
+            
+            document.getElementById('refreshButton').addEventListener('click', () => {
+                loadMangaList();
+            });
+            
+        } catch (error) {
+            console.error('Error loading manga list:', error);
+            document.getElementById('mangaGrid').innerHTML = `
+                <div class="col-span-full text-center p-8 bg-red-900 bg-opacity-30 rounded">
+                    <p class="text-xl">Failed to load manga data. Please check that state.json exists.</p>
+                    <p class="mt-2 text-gray-400">${error.message}</p>
+                    <button id="retryButton" class="mt-4 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded">
+                        Retry Loading
+                    </button>   
+                </div>
+            `;
+
+            // retry button 
+            document.getElementById('retryButton').addEventListener('click', () => {
+                loadMangaList();
             });
         }
+    }
+
+    // Function to display manga in the grid
+    function displayManga(seriesList) {
+        const mangaGrid = document.getElementById('mangaGrid');
+        mangaGrid.innerHTML = '';
         
-        // Helper function to format series name (convert from snake_case to Title Case)
-        function formatSeriesName(seriesName) {
-            if (seriesName === 'Unknown Series') return seriesName;
-            
-            return seriesName
-                .split('_')
-                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                .join(' ');
+        if (seriesList.length === 0) {
+            mangaGrid.innerHTML = `
+                <div class="col-span-full text-center p-8 bg-gray-800 rounded">
+                    <p class="text-xl">No manga chapters found.</p>
+                </div>
+            `;
+            return;
         }
         
-        // Helper function to format timestamps as "X time ago"
-        function getTimeAgo(timestamp) {
-            const now = new Date();
-            const diff = now - timestamp;
+        seriesList.forEach(([seriesName, chapters]) => {
+            const formattedName = formatSeriesName(seriesName);
+            const seriesDiv = document.createElement('div');
+            seriesDiv.className = 'bg-gray-800 rounded-lg p-4 flex space-x-4';
             
-            const minutes = Math.floor(diff / 60000);
-            const hours = Math.floor(minutes / 60);
-            const days = Math.floor(hours / 24);
+            // Create the card with a default symbol instead of a cover image
+            const card = document.createElement('div');
+            card.className = 'card';
             
-            if (days > 0) {
-                return `${days} day${days > 1 ? 's' : ''} ago`;
-            } else if (hours > 0) {
-                return `${hours} hour${hours > 1 ? 's' : ''} ago`;
-            } else if (minutes > 0) {
-                return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
-            } else {
-                return 'just now';
-            }
-        }
+            const cardInfo = document.createElement('div');
+            cardInfo.className = 'card-info';
+            const img = document.createElement('img');
+            img.src = 'cover.jpg';
+            cardInfo.appendChild(img); // Add image to the card
+            card.appendChild(cardInfo);
+            
+            // Create content div
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'flex-1';
+            
+            // Create series title
+            const title = document.createElement('h2');
+            title.className = 'text-lg font-bold mb-2 text-purple-300';
+            title.textContent = formattedName;
+            
+            // Create chapter list
+            const chapterList = document.createElement('ul');
+            chapterList.className = 'text-sm space-y-2';
+            
+            // Only show up to 3 most recent chapters
+            chapters.slice(0, 3).forEach(chapter => {
+                const chapterItem = document.createElement('li');
+                chapterItem.className = 'flex items-center justify-between';
+                
+                // Create the link to the HTML file in the chapter's folder - with defensive check for path
+                const chapterPath = chapter.path || '';
+                const htmlLink = chapterPath ? 
+                    `./${chapterPath}/${seriesName.toLowerCase().replace(/\s+/g, '_')}_chapter_${chapter.chapterNumber}.html` :
+                    '#'; // Fallback link
+                
+                chapterItem.innerHTML = `
+                    <a href="${htmlLink}" class="text-purple-500 hover:text-purple-400 chapter-link">
+                        • Chapter ${chapter.chapterNumber}
+                    </a>
+                    <span class="text-gray-400">${chapter.formattedTime}</span>
+                `;
+                
+                chapterList.appendChild(chapterItem);
+            });
+            
+            // Assemble the manga item
+            contentDiv.appendChild(title);
+            contentDiv.appendChild(chapterList);
+            
+            seriesDiv.appendChild(card);
+            seriesDiv.appendChild(contentDiv);
+            
+            mangaGrid.appendChild(seriesDiv);
+        });
+    }
+    
+    // Helper function to format series name (convert from snake_case to Title Case)
+    function formatSeriesName(seriesName) {
+        if (seriesName === 'Unknown Series') return seriesName;
         
-        // Load manga list when the page loads
-        document.addEventListener('DOMContentLoaded', loadMangaList);
+        return seriesName
+            .split('_')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+    }
+    
+    // Helper function to format timestamps as "X time ago"
+    function getTimeAgo(timestamp) {
+        const now = new Date();
+        const diff = now - timestamp;
+        
+        const minutes = Math.floor(diff / 60000);
+        const hours = Math.floor(minutes / 60);
+        const days = Math.floor(hours / 24);
+        
+        if (days > 0) {
+            return `${days} day${days > 1 ? 's' : ''} ago`;
+        } else if (hours > 0) {
+            return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+        } else if (minutes > 0) {
+            return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+        } else {
+            return 'just now';
+        }
+    }
+    
+    // Load manga list when the page loads
+    document.addEventListener('DOMContentLoaded', loadMangaList);
     </script>
 </body>
 </html>
