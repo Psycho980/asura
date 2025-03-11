@@ -1,5 +1,5 @@
 {
-  "lastStartNumber": 279371,
+  "lastStartNumber": 279383,
   "downloadedChapters": {
     "Revenge of the Iron-Blooded Swordhound_103": {
       "timestamp": "2025-03-11T21:57:52.680584",
@@ -25,6 +25,11 @@
       "timestamp": "2025-03-11T22:19:10.635308",
       "imageCount": 16,
       "githubPath": "series/unknown_series/chapter_unknown"
+    },
+    "The Tutorial is Too Hard_208": {
+      "timestamp": "2025-03-11T22:32:59.273606",
+      "imageCount": 12,
+      "githubPath": "series/the_tutorial_is_too_hard/chapter_208"
     }
   }
 }
