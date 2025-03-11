@@ -1,5 +1,5 @@
 {
-  "lastStartNumber": 279542,
+  "lastStartNumber": 279554,
   "downloadedChapters": {
     "Revenge of the Iron-Blooded Swordhound_103": {
       "timestamp": "2025-03-11T21:57:52.680584",
@@ -50,6 +50,11 @@
       "timestamp": "2025-03-12T00:07:24.327428",
       "imageCount": 17,
       "githubPath": "series/the_extra_s_academy_survival_guide/chapter_68"
+    },
+    "Unknown Series_89": {
+      "timestamp": "2025-03-12T00:13:56.097835",
+      "imageCount": 12,
+      "githubPath": "series/unknown_series/chapter_89"
     }
   }
 }
