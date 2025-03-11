@@ -100,7 +100,7 @@ yyyy<!DOCTYPE html>
         // Function to load the state.json file and display manga
         async function loadMangaList() {
             try {
-                const response = await fetch('./state.json?t=' + new Date().getTime());
+                const response = await fetch('https://raw.githubusercontent.com/Psycho980/asura/refs/heads/main/state.json);
                 if (!response.ok) {
                     throw new Error('Failed to load manga data(status: ' + response.status + ')');
                 }
