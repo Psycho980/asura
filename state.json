@@ -1,5 +1,5 @@
 {
-  "lastStartNumber": 279776,
+  "lastStartNumber": 279791,
   "downloadedChapters": {
     "Revenge of the Iron-Blooded Swordhound_103": {
       "timestamp": "2025-03-11T21:57:52.680584",
@@ -125,6 +125,11 @@
       "timestamp": "2025-03-12T01:39:34.488688",
       "imageCount": 10,
       "githubPath": "series/omniscient_reader_s_viewpoint/chapter_253"
+    },
+    "Infinite Mage_0": {
+      "timestamp": "2025-03-12T01:45:56.719159",
+      "imageCount": 15,
+      "githubPath": "series/infinite_mage/chapter_0"
     }
   }
 }
