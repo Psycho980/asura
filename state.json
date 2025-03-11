@@ -1,5 +1,5 @@
 {
-  "lastStartNumber": 279432,
+  "lastStartNumber": 279446,
   "downloadedChapters": {
     "Revenge of the Iron-Blooded Swordhound_103": {
       "timestamp": "2025-03-11T21:57:52.680584",
@@ -35,6 +35,11 @@
       "timestamp": "2025-03-11T23:01:59.983619",
       "imageCount": 16,
       "githubPath": "series/standard_of_reincarnation/chapter_134"
+    },
+    "Emperor of Steel_31": {
+      "timestamp": "2025-03-11T23:13:17.849011",
+      "imageCount": 14,
+      "githubPath": "series/emperor_of_steel/chapter_31"
     }
   }
 }
