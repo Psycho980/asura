@@ -1,5 +1,5 @@
 {
-  "lastStartNumber": 279592,
+  "lastStartNumber": 279604,
   "downloadedChapters": {
     "Revenge of the Iron-Blooded Swordhound_103": {
       "timestamp": "2025-03-11T21:57:52.680584",
@@ -70,6 +70,11 @@
       "timestamp": "2025-03-12T00:33:39.085604",
       "imageCount": 13,
       "githubPath": "series/the_indomitable_martial_king/chapter_72"
+    },
+    "The Terminally Ill Young Master_47": {
+      "timestamp": "2025-03-12T00:39:22.994419",
+      "imageCount": 12,
+      "githubPath": "series/the_terminally_ill_young_master/chapter_47"
     }
   }
 }
