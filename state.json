@@ -1,5 +1,5 @@
 {
-  "lastStartNumber": 279917,
+  "lastStartNumber": 279929,
   "downloadedChapters": {
     "Revenge of the Iron-Blooded Swordhound_103": {
       "timestamp": "2025-03-11T21:57:52.680584",
@@ -165,6 +165,11 @@
       "timestamp": "2025-03-12T09:52:20.575995",
       "imageCount": 11,
       "githubPath": "series/unknown_series/chapter_115"
+    },
+    "Night of Soulless Heathens_23": {
+      "timestamp": "2025-03-12T09:58:26.829814",
+      "imageCount": 11,
+      "githubPath": "series/night_of_soulless_heathens/chapter_23"
     }
   }
 }
