@@ -1,5 +1,16 @@
 [
   {
+    "series": "The Hero Returns",
+    "chapters": [
+      {
+        "chapter": 117,
+        "startNumber": 280024,
+        "frameCount": 13,
+        "filePattern": "00-optimized.webp"
+      }
+    ]
+  },
+  {
     "series": "Unknown Series",
     "chapters": [
       {
