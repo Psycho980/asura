@@ -1,5 +1,5 @@
 {
-  "lastStartNumber": 280036,
+  "lastStartNumber": 280050,
   "downloadedChapters": {
     "The Heavenly Demon Wants a Quiet Life_22": {
       "timestamp": "2025-03-12T09:39:55.484966",
@@ -45,6 +45,11 @@
       "timestamp": "2025-03-12T19:23:34.669206",
       "imageCount": 13,
       "githubPath": "series/the_hero_returns/chapter_117"
+    },
+    "Unknown Series_27": {
+      "timestamp": "2025-03-12T20:00:50.918780",
+      "imageCount": 13,
+      "githubPath": "series/unknown_series/chapter_27"
     }
   }
 }
