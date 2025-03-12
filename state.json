@@ -1,5 +1,5 @@
 {
-  "lastStartNumber": 279876,
+  "lastStartNumber": 279891,
   "downloadedChapters": {
     "Revenge of the Iron-Blooded Swordhound_103": {
       "timestamp": "2025-03-11T21:57:52.680584",
@@ -150,6 +150,11 @@
       "timestamp": "2025-03-12T07:04:50.825357",
       "imageCount": 13,
       "githubPath": "series/unknown_series/chapter_74"
+    },
+    "The Heavenly Demon Wants a Quiet Life_22": {
+      "timestamp": "2025-03-12T09:39:55.484966",
+      "imageCount": 14,
+      "githubPath": "series/the_heavenly_demon_wants_a_quiet_life/chapter_22"
     }
   }
 }
