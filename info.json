@@ -11,6 +11,17 @@
     ]
   },
   {
+    "series": "Solo Max-Level Newbie",
+    "chapters": [
+      {
+        "chapter": 197,
+        "startNumber": 280214,
+        "frameCount": 13,
+        "filePattern": "00-optimized.webp"
+      }
+    ]
+  },
+  {
     "series": "SSS-Class Suicide Hunter",
     "chapters": [
       {
