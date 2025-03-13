@@ -1,5 +1,16 @@
 [
   {
+    "series": "Revenge of the Iron-Blooded Swordhound",
+    "chapters": [
+      {
+        "chapter": 103,
+        "startNumber": 279291,
+        "frameCount": 14,
+        "filePattern": "0000-copy-optimized.webp"
+      }
+    ]
+  },
+  {
     "series": "The Hero Returns",
     "chapters": [
       {
