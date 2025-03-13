@@ -22,6 +22,17 @@
     ]
   },
   {
+    "series": "The Ultimate Shut-in",
+    "chapters": [
+      {
+        "chapter": 21,
+        "startNumber": 280171,
+        "frameCount": 15,
+        "filePattern": "00-optimized.webp"
+      }
+    ]
+  },
+  {
     "series": "The World After The End",
     "chapters": [
       {
