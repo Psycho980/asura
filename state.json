@@ -1,5 +1,5 @@
 {
-  "lastStartNumber": 280185,
+  "lastStartNumber": 280199,
   "downloadedChapters": {
     "Revenge of the Iron-Blooded Swordhound_103": {
       "timestamp": "2025-03-13T12:18:44.488778",
@@ -35,6 +35,11 @@
       "timestamp": "2025-03-13T17:04:51.003248",
       "imageCount": 15,
       "githubPath": "series/the_ultimate_shut_in/chapter_21"
+    },
+    "SSS-Class Suicide Hunter_130": {
+      "timestamp": "2025-03-13T18:44:07.635144",
+      "imageCount": 11,
+      "githubPath": "series/sss_class_suicide_hunter/chapter_130"
     }
   }
 }
