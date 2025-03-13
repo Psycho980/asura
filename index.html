@@ -1,518 +1,918 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asura Premium Cracked</title>
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-      .chapter-link:hover {
-        text-decoration: underline;
-      }
-
-      .card {
-  --background: linear-gradient(to right, #13b37f 0%, #11a3c8 100%);
-  width: 140px;
-  height: 180px;
-  padding: 0.9px;
-  border-radius: 0.7rem;
-  overflow: hidden;  /* Changed from visible to hidden */
-  background: #f7ba2b;
-  background: var(--background);
-  position: relative;
-  z-index: 1;
-}
-
-      .card::after {
-        position: absolute;
-        content: "";
-        top: -22px;
-        left: 0px;
-        right: 0;
-        z-index: -1;
-        height: 100%;
-        width: 100%;
-        transform: scale(0.76);
-        filter: blur(34.5px);
-        background: #f7ba2b;
-        background: var(--background);
-        transition: opacity 0.5s;
-      }
-
-      .card-info {
-  --color: #1f1a1d;
-  background: var(--color);
-  color: var(--color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 0.7rem;
-  position: relative;  /* Added */
-}
-
-.card-info {
-  --color: #1f1a1d;
-  background: var(--color);
-  color: var(--color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 0.7rem;
-  position: relative;  /* Added */
-}
-
-.card-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.card:hover .card-image {
-  transform: scale(1.1);
-}
-
-/* Add overlay effect on hover */
-.card-info::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.card:hover .card-info::after {
-  opacity: 1;
-}
-      .card .title {
-        font-weight: light;
-        letter-spacing: 0.2em;
-      }
-
-      @keyframes autoRun3d {
-        from {
-          transform: perspective(800px) rotateY(-360deg);
+        .chapter-link:hover {
+            text-decoration: underline;
         }
 
-        to {
-          transform: perspective(800px) rotateY(0deg);
+        .card {
+            --background: linear-gradient(to right, #13b37f 0%, #11a3c8 100%);
+            width: 140px;
+            height: 180px;
+            padding: 0.9px;
+            border-radius: 0.7rem;
+            overflow: visible;
+            background: #f7ba2b;
+            background: var(--background);
+            position: relative;
+            z-index: 1;
         }
-      }
 
-      @keyframes animateBrightness {
-        10% {
-          filter: brightness(1);
+        .card::after {
+            position: absolute;
+            content: "";
+            top: -22px;
+            left: 0px;
+            right: 0;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            transform: scale(0.76);
+            filter: blur(34.5px);
+            background: #f7ba2b;
+            background: var(--background);
+            transition: opacity 0.5s;
         }
 
-        50% {
-          filter: brightness(0.1);
+        .card-info {
+            --color: #1f1a1d;
+            background: var(--color);
+            color: var(--color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+            border-radius: 0.7rem;
         }
 
-        90% {
-          filter: brightness(1);
+        .card .title {
+            font-weight: light;
+            letter-spacing: 0.2em;
         }
-      }
 
-      .card-3d {
-        position: relative;
-        width: 400px;
-        height: 200px;
-        transform-style: preserve-3d;
-        transform: perspective(800px);
-        animation: autoRun3d 20s linear infinite;
-        will-change: transform;
-        margin: 0 auto;
-        margin-bottom: 30px;
-      }
+        /* Hover */
+        .card:hover::after {
+            opacity: 0.6;
+            padding: 0.7rem 0;
+            top: 18px;
+            transition: 0.6s;
+        }
 
-      .card-3d div {
-        position: absolute;
-        width: 80px;
-        height: 112px;
-        background-color: #000000;
-        border: solid 2px #333333;
-        border-radius: 0.5rem;
-        top: 50%;
-        left: 50%;
-        transform-origin: center center;
-        animation: animateBrightness 20s linear infinite;
-        transition-duration: 200ms;
-        will-change: transform, filter;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        font-size: 12px;
-        color: #FFFFFF;
-        padding: 5px;
-        overflow: hidden;
-      }
+        .card:hover .card-info {
+            color: #fff9f9;
+            transition: color 1s;
+        }
 
-      .card-3d:hover {
-        animation-play-state: paused !important;
-      }
+        @keyframes autoRun3d {
+            from {
+                transform: perspective(800px) rotateY(-360deg);
+            }
 
-      .card-3d:hover div {
-        animation-play-state: paused !important;
-      }
+            to {
+                transform: perspective(800px) rotateY(0deg);
+            }
+        }
 
-      .card-3d div:nth-child(1) {
-        transform: translate(-50%, -50%) rotateY(0deg) translateZ(150px);
-        animation-delay: -0s;
-      }
+        @keyframes animateBrightness {
+            10% {
+                filter: brightness(1);
+            }
 
-      .card-3d div:nth-child(2) {
-        transform: translate(-50%, -50%) rotateY(36deg) translateZ(150px);
-        animation-delay: -2s;
-      }
+            50% {
+                filter: brightness(0.1);
+            }
 
-      .card-3d div:nth-child(3) {
-        transform: translate(-50%, -50%) rotateY(72deg) translateZ(150px);
-        animation-delay: -4s;
-      }
+            90% {
+                filter: brightness(1);
+            }
+        }
 
-      .card-3d div:nth-child(4) {
-        transform: translate(-50%, -50%) rotateY(108deg) translateZ(150px);
-        animation-delay: -6s;
-      }
+        .card-3d {
+            position: relative;
+            width: 400px;
+            height: 200px;
+            transform-style: preserve-3d;
+            transform: perspective(800px);
+            animation: autoRun3d 20s linear infinite;
+            will-change: transform;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
 
-      .card-3d div:nth-child(5) {
-        transform: translate(-50%, -50%) rotateY(144deg) translateZ(150px);
-        animation-delay: -8s;
-      }
+        .card-3d div {
+            position: absolute;
+            width: 80px;
+            height: 112px;
+            background-color: #000000;
+            border: solid 2px #333333;
+            border-radius: 0.5rem;
+            top: 50%;
+            left: 50%;
+            transform-origin: center center;
+            animation: animateBrightness 20s linear infinite;
+            transition-duration: 200ms;
+            will-change: transform, filter;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 12px;
+            color: #FFFFFF;
+            padding: 5px;
+            overflow: hidden;
+        }
 
-      .card-3d div:nth-child(6) {
-        transform: translate(-50%, -50%) rotateY(180deg) translateZ(150px);
-        animation-delay: -10s;
-      }
+        .card-3d:hover {
+            animation-play-state: paused !important;
+        }
 
-      .card-3d div:nth-child(7) {
-        transform: translate(-50%, -50%) rotateY(216deg) translateZ(150px);
-        animation-delay: -12s;
-      }
+        .card-3d:hover div {
+            animation-play-state: paused !important;
+        }
 
-      .card-3d div:nth-child(8) {
-        transform: translate(-50%, -50%) rotateY(252deg) translateZ(150px);
-        animation-delay: -14s;
-      }
+        .card-3d div:nth-child(1) {
+            transform: translate(-50%, -50%) rotateY(0deg) translateZ(150px);
+            animation-delay: -0s;
+        }
 
-      .card-3d div:nth-child(9) {
-        transform: translate(-50%, -50%) rotateY(288deg) translateZ(150px);
-        animation-delay: -16s;
-      }
+        .card-3d div:nth-child(2) {
+            transform: translate(-50%, -50%) rotateY(36deg) translateZ(150px);
+            animation-delay: -2s;
+        }
 
-      .card-3d div:nth-child(10) {
-        transform: translate(-50%, -50%) rotateY(324deg) translateZ(150px);
-        animation-delay: -18s;
-      }
+        .card-3d div:nth-child(3) {
+            transform: translate(-50%, -50%) rotateY(72deg) translateZ(150px);
+            animation-delay: -4s;
+        }
 
-      /* Hover */
-      .card:hover::after {
-        opacity: 0.6;
-        padding: 0.7rem 0;
-        top: 18px;
-        transition: 0.6s;
-      }
+        .card-3d div:nth-child(4) {
+            transform: translate(-50%, -50%) rotateY(108deg) translateZ(150px);
+            animation-delay: -6s;
+        }
 
-      .card:hover .card-info {
-        color: #fff9f9;
-        transition: color 1s;
-      }
+        .card-3d div:nth-child(5) {
+            transform: translate(-50%, -50%) rotateY(144deg) translateZ(150px);
+            animation-delay: -8s;
+        }
 
-      .custom-bg {
-        background-color: #2C23EA;
-      }
+        .card-3d div:nth-child(6) {
+            transform: translate(-50%, -50%) rotateY(180deg) translateZ(150px);
+            animation-delay: -10s;
+        }
 
-      :root {
-        --dark-bg: #141619;
-        --secondary-bg: #2c2e4a;
-        --accent: #964734;
-        --light-text: #FDFBD4;
-      }
+        .card-3d div:nth-child(7) {
+            transform: translate(-50%, -50%) rotateY(216deg) translateZ(150px);
+            animation-delay: -12s;
+        }
 
-      /* Base Styles */
-      body {
-        background-color: var(--dark-bg);
-        color: var(--light-text);
-        font-family: Arial, sans-serif;
-      }
+        .card-3d div:nth-child(8) {
+            transform: translate(-50%, -50%) rotateY(252deg) translateZ(150px);
+            animation-delay: -14s;
+        }
 
-      .button {
-  --main-focus: #2d8cf0;
-  --font-color: #ffffff;
-  --bg-color-sub: #1a1a1a;
-  --bg-color: #2a2a2a;
-  --main-color: #4a4a4a;
-  position: relative;
-  width: 150px;
-  height: 40px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  border: 2px solid var(--main-color);
-  box-shadow: 4px 4px var(--main-color);
-  background-color: var(--bg-color);
-  border-radius: 10px;
-  overflow: hidden;
-}
+        .card-3d div:nth-child(9) {
+            transform: translate(-50%, -50%) rotateY(288deg) translateZ(150px);
+            animation-delay: -16s;
+        }
 
-.button, .button__icon, .button__text {
-  transition: all 0.3s;
-}
+        .card-3d div:nth-child(10) {
+            transform: translate(-50%, -50%) rotateY(324deg) translateZ(150px);
+            animation-delay: -18s;
+        }
 
-.button .button__text {
-  transform: translateX(30px);
-  color: var(--font-color);
-  font-weight: 600;
-}
+        .button {
+            --main-focus: #2d8cf0;
+            --font-color: #ffffff;
+            --bg-color-sub: #1a1a1a;
+            --bg-color: #2a2a2a;
+            --main-color: #4a4a4a;
+            position: relative;
+            width: 150px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            border: 2px solid var(--main-color);
+            box-shadow: 4px 4px var(--main-color);
+            background-color: var(--bg-color);
+            border-radius: 10px;
+            overflow: hidden;
+        }
 
-.button .button__icon {
-  position: absolute;
-  transform: translateX(109px);
-  height: 100%;
-  width: 39px;
-  background-color: var(--bg-color-sub);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+        .button, .button__icon, .button__text {
+            transition: all 0.3s;
+        }
 
-.button .svg {
-  width: 20px;
-  fill: var(--font-color);
-}
+        .button .button__text {
+            transform: translateX(30px);
+            color: var(--font-color);
+            font-weight: 600;
+        }
 
-.button:hover {
-  background: var(--bg-color);
-}
+        .button .button__icon {
+            position: absolute;
+            transform: translateX(109px);
+            height: 100%;
+            width: 39px;
+            background-color: var(--bg-color-sub);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.button:hover .button__text {
-  color: transparent;
-}
+        .button .svg {
+            width: 20px;
+            fill: var(--font-color);
+        }
 
-.button:hover .button__icon {
-  width: 148px;
-  transform: translateX(0);
-}
+        .button:hover {
+            background: var(--bg-color);
+        }
 
-.button:active {
-  transform: translate(3px, 3px);
-  box-shadow: 0px 0px var(--main-color);
-}
+        .button:hover .button__text {
+            color: transparent;
+        }
 
+        .button:hover .button__icon {
+            width: 148px;
+            transform: translateX(0);
+        }
+
+        .button:active {
+            transform: translate(3px, 3px);
+            box-shadow: 0px 0px var(--main-color);
+        }
+
+        .loader {
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Text animation (Loading) */
+        .loader-1 {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            margin-bottom: 20px;
+        }
+
+        .loader span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 38px;
+            letter-spacing: 5px;
+        }
+
+        .loader span:nth-child(1) {
+            color: transparent;
+            -webkit-text-stroke: 0.3px rgb(255, 255, 255);
+        }
+
+        .loader span:nth-child(2) {
+            color: rgb(255, 255, 255);
+            -webkit-text-stroke: 1px rgb(255, 255, 255);
+            animation: uiverse723 3s ease-in-out infinite;
+        }
+
+        @keyframes uiverse723 {
+            0%,
+            100% {
+                clip-path: polygon(
+                    0% 45%,
+                    15% 44%,
+                    32% 50%,
+                    54% 60%,
+                    70% 61%,
+                    84% 59%,
+                    100% 52%,
+                    100% 100%,
+                    0% 100%
+                );
+            }
+            50% {
+                clip-path: polygon(
+                    0% 60%,
+                    16% 65%,
+                    34% 66%,
+                    51% 62%,
+                    67% 50%,
+                    84% 45%,
+                    100% 46%,
+                    100% 100%,
+                    0% 100%
+                );
+            }
+        }
+
+        /* Cat and wall container */
+        .wrapper {
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Cat styling */
+        .catContainer {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .catbody {
+            width: 80px;
+            height: auto;
+        }
+
+        /* Restored original tail positioning */
+        .tail {
+            position: absolute;
+            width: 17px;
+            top: 50%;
+            animation: tail 0.5s ease-in infinite alternate-reverse;
+            transform-origin: top;
+        }
+
+        @keyframes tail {
+            0% {
+                transform: rotateZ(60deg);
+            }
+            50% {
+                transform: rotateZ(0deg);
+            }
+            100% {
+                transform: rotateZ(-20deg);
+            }
+        }
+
+        /* Z text animation */
+        .text {
+            display: flex;
+            flex-direction: column;
+            width: 50px;
+            position: absolute;
+            margin: 0px 0px 100px 120px;
+        }
+
+        .zzz {
+            color: white;
+            font-weight: 700;
+            font-size: 15px;
+            animation: zzz 2s linear infinite;
+        }
+
+        .bigzzz {
+            color: white;
+            font-weight: 700;
+            font-size: 25px;
+            margin-left: 10px;
+            animation: zzz 2.3s linear infinite;
+        }
+
+        @keyframes zzz {
+            0% {
+                color: transparent;
+            }
+            50% {
+                color: white;
+            }
+            100% {
+                color: transparent;
+            }
+        }
+
+        /* Wall styling */
+        .wallContainer {
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            margin-top: -30px;
+        }
+
+        .wall {
+            width: 300px;
+            height: auto;
+        }
+
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--dark-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #content {
+            display: none;
+        }
+
+        :root {
+            --dark-bg: #141619;
+            --secondary-bg: #2c2e4a;
+            --accent: #964734;
+            --light-text: #FDFBD4;
+        }
+
+        /* Base Styles */
+        body {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            font-family: Arial, sans-serif;
+        }
     </style>
-  </head>
-  <body>
-    <div class="container mx-auto p-4">
-      <header class="mb-8">
-        <h1 class="text-3xl font-bold text-center mb-2">Bypass Asura</h1>
-        <p class="text-gray-400 text-center">Made by l3v2s on discord</p>
-      </header>
-      <div class="card-3d" id="seriesCards">
-        <!-- Cards will be dynamically populated by JavaScript -->
-      </div>
-      <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-bold">Latest Chapters</h2>
-        <div class="flex space-x-4">
-          <select id="seriesFilter" class="bg-gray-800 text-white px-4 py-2 rounded">
-            <option value="all">All Series</option>
-          </select>
-          <button id="refreshButton" class="button">
-            <span class="button__text">Refresh</span>
-            <span class="button__icon">
-              <svg class="svg" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg">
-                <path d="M35.3 12.7c-2.89-2.9-6.88-4.7-11.3-4.7-8.84 0-15.98 7.16-15.98 16s7.14 16 15.98 16c7.45 0 13.69-5.1 15.46-12h-4.16c-1.65 4.66-6.07 8-11.3 8-6.63 0-12-5.37-12-12s5.37-12 12-12c3.31 0 6.28 1.38 8.45 3.55l-6.45 6.45h14v-14l-4.7 4.7z"></path>
-                <path d="M0 0h48v48h-48z" fill="none"></path>
-              </svg>
-            </span>
-          </button>
-      <div id="mangaGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Manga items will be populated here by JavaScript -->
-      </div>
+</head>
+<body class="bg-gray-900 text-white">
+<!-- Loading Screen -->
+<div id="loading-screen">
+    <div class="wrapper">
+        <div class="catContainer">
+            <svg
+                class="catbody"
+                viewBox="0 0 733 673"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M111.002 139.5C270.502 -24.5001 471.503 2.4997 621.002 139.5C770.501 276.5 768.504 627.5 621.002 649.5C473.5 671.5 246 687.5 111.002 649.5C-23.9964 611.5 -48.4982 303.5 111.002 139.5Z"
+                    fill="#eee"
+                ></path>
+                <path d="M184 9L270.603 159H97.3975L184 9Z" fill="#eee"></path>
+                <path d="M541 0L627.603 150H454.397L541 0Z" fill="#eee"></path>
+            </svg>
+            <svg
+                class="tail"
+                viewBox="0 0 158 564"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M5.97602 76.066C-11.1099 41.6747 12.9018 0 51.3036 0V0C71.5336 0 89.8636 12.2558 97.2565 31.0866C173.697 225.792 180.478 345.852 97.0691 536.666C89.7636 553.378 73.0672 564 54.8273 564V564C16.9427 564 -5.4224 521.149 13.0712 488.085C90.2225 350.15 87.9612 241.089 5.97602 76.066Z"
+                    fill="gray"
+                ></path>
+            </svg>
+            <div class="text">
+                <span class="bigzzz">Z</span>
+                <span class="zzz">Z</span>
+            </div>
+        </div>
+        <div class="wallContainer">
+            <svg
+                class="wall"
+                viewBox="0 0 500 126"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <line
+                    x1="50"
+                    y1="3"
+                    x2="450"
+                    y2="3"
+                    stroke="#7C7C7C"
+                    stroke-width="6"
+                ></line>
+                <line
+                    x1="100"
+                    y1="85"
+                    x2="400"
+                    y2="85"
+                    stroke="#7C7C7C"
+                    stroke-width="6"
+                ></line>
+                <line
+                    x1="125"
+                    y1="122"
+                    x2="375"
+                    y2="122"
+                    stroke="#7C7C7C"
+                    stroke-width="6"
+                ></line>
+                <line y1="43" x2="500" y2="43" stroke="#7C7C7C" stroke-width="6"></line>
+                <line
+                    x1="115.5"
+                    y1="43.0061"
+                    x2="115.5"
+                    y2="1.99391"
+                    stroke="#7C7C7C"
+                    stroke-width="6"
+                ></line>
+                <line
+                    x1="189"
+                    y1="43.0122"
+                    x2="189"
+                    y2="2.00002"
+                    stroke="#7C7C7C"
+                    stroke-width="6"
+                ></line>
+                <line
+                    x1="262.5"
+                    y1="43.0183"
+                    x2="262.5"
+                    y2="2.00612"
+                    stroke="#7C7C7C"
+                    stroke-width="6"
+                ></line>
+                <line
+                    x1="336"
+                    y1="43.0244"
+                    x2="336"
+                    y2="2.01222"
+                    stroke="#7C7C7C"
+                    stroke-width="6"
+                ></line>
+                <line
+                    x1="409.5"
+                    y1="43.0305"
+                    x2="409.5"
+                    y2="2.01833"
+                    stroke="#7C7C7C"
+                    stroke-width="6"
+                ></line>
+                <line
+                    x1="153"
+                    y1="84.0122"
+                    x2="153"
+                    y2="43"
+                    stroke="#7C7C7C"
+                    stroke-width="6"
+                ></line>
+                <line
+                    x1="228"
+                    y1="84.0122"
+                    x2="228"
+                    y2="43"
+                    stroke="#7C7C7C"
+                    stroke-width="6"
+                ></line>
+                <line
+                    x1="303"
+                    y1="84.0122"
+                    x2="303"
+                    y2="43"
+                    stroke="#7C7C7C"
+                    stroke-width="6"
+                ></line>
+                <line
+                    x1="378"
+                    y1="84.0122"
+                    x2="378"
+                    y2="43"
+                    stroke="#7C7C7C"
+                    stroke-width="6"
+                ></line>
+                <line
+                    x1="192"
+                    y1="125.012"
+                    x2="192"
+                    y2="84"
+                    stroke="#7C7C7C"
+                    stroke-width="6"
+                ></line>
+                <line
+                    x1="267"
+                    y1="125.012"
+                    x2="267"
+                    y2="84"
+                    stroke="#7C7C7C"
+                    stroke-width="6"
+                ></line>
+                <line
+                    x1="342"
+                    y1="125.012"
+                    x2="342"
+                    y2="84"
+                    stroke="#7C7C7C"
+                    stroke-width="6"
+                ></line>
+            </svg>
+        </div>
+        <div class="loader">
+            <div class="loader-1">
+                <span>Loading</span>
+                <span>Loading</span>
+            </div>
+        </div>
     </div>
-    <script>
-      // Function to load the state.json file and display manga
-      async function loadMangaList() {
+</div>
+
+    <!-- Main Content -->
+    <div id="content">
+        <div class="container mx-auto p-4">
+            <header class="mb-8">
+                <h1 class="text-3xl font-bold text-center mb-2">Bypass Asura</h1>
+                <p class="text-gray-400 text-center">Made by l3v2s on discord</p>
+            </header>
+            
+            <div class="card-3d" id="seriesCards">
+                <!-- Cards will be dynamically populated by JavaScript -->
+            </div>
+
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-bold">Latest Chapters</h2>
+                <div class="flex space-x-4">
+                    <select id="seriesFilter" class="bg-gray-800 text-white px-4 py-2 rounded">
+                        <option value="all">All Series</option>
+                    </select>
+                    <button id="refreshButton" class="button">
+                        <span class="button__text">Refresh</span>
+                        <span class="button__icon">
+                            <svg class="svg" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M35.3 12.7c-2.89-2.9-6.88-4.7-11.3-4.7-8.84 0-15.98 7.16-15.98 16s7.14 16 15.98 16c7.45 0 13.69-5.1 15.46-12h-4.16c-1.65 4.66-6.07 8-11.3 8-6.63 0-12-5.37-12-12s5.37-12 12-12c3.31 0 6.28 1.38 8.45 3.55l-6.45 6.45h14v-14l-4.7 4.7z"></path>
+                                <path d="M0 0h48v48h-48z" fill="none"></path>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mangaGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Manga items will be populated here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+<script>
+    // Show loading screen for 3 seconds
+    window.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            document.getElementById('loading-screen').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }, 3000);
+    });
+
+    // Function to load the state.json file and display manga
+    async function loadMangaList() {
         try {
-          const response = await fetch("state.json");
-          if (!response.ok) {
-            throw new Error('Failed to load manga data(status: ' + response.status + ')');
-          }
-          const data = await response.json();
-          const downloadedChapters = data.downloadedChapters || {};
-          // Process the data
-          const seriesMap = {};
-          // Group chapters by series
-          Object.entries(downloadedChapters).forEach(([key, chapter]) => {
-            // Skip invalid entries
-            if (!chapter || typeof chapter !== 'object') {
-              console.warn(`Skipping invalid chapter entry for key: ${key}`);
-              return;
+            const response = await fetch("state.json");
+            if (!response.ok) {
+                throw new Error('Failed to load data(status: ' + response.status + ')');
             }
-            const [seriesName, chapterNumber] = key.split('_');
-            // Check if chapter has a valid timestamp
-            const timestamp = chapter.timestamp ? new Date(chapter.timestamp) : new Date();
-            if (!seriesMap[seriesName]) {
-              seriesMap[seriesName] = [];
-            }
-            seriesMap[seriesName].push({
-              chapterNumber,
-              timestamp,
-              formattedTime: getTimeAgo(timestamp),
-              githubPath: chapter.githubPath || '',
-              imageCount: chapter.imageCount || 0
+            
+            const data = await response.json();
+            const downloadedChapters = data.downloadedChapters || {};
+            
+            // Process the data
+            const seriesMap = {};
+            
+            // Group chapters by series
+            Object.entries(downloadedChapters).forEach(([key, chapter]) => {
+                // Skip invalid entries
+                if (!chapter || typeof chapter !== 'object') {
+                    console.warn(`Skipping invalid chapter entry for key: ${key}`);
+                    return;
+                }
+                
+                const [seriesName, chapterNumber] = key.split('_');
+                
+                // Check if chapter has a valid timestamp
+                const timestamp = chapter.timestamp ? new Date(chapter.timestamp) : new Date();
+                
+                if (!seriesMap[seriesName]) {
+                    seriesMap[seriesName] = [];
+                }
+                
+                // Check if path exists before using replace
+                const path = chapter.path ? chapter.path.replace(/\\/g, '/') : '';
+                
+                seriesMap[seriesName].push({
+                    chapterNumber,
+                    timestamp,
+                    formattedTime: getTimeAgo(timestamp),
+                    path: path,
+                    imageCount: chapter.imageCount || 0
+                });
             });
-          });
-          // Sort chapters within each series by chapter number (newest first)
-          Object.values(seriesMap).forEach(chapters => {
-            chapters.sort((a, b) => {
-              // Try to compare as numbers if possible
-              const numA = parseInt(a.chapterNumber);
-              const numB = parseInt(b.chapterNumber);
-              if (!isNaN(numA) && !isNaN(numB)) {
-                return numB - numA; // Descending order
-              }
-              // Fall back to string comparison
-              return b.chapterNumber.localeCompare(a.chapterNumber);
+            
+            // Sort chapters within each series by chapter number (newest first)
+            Object.values(seriesMap).forEach(chapters => {
+                chapters.sort((a, b) => {
+                    // Try to compare as numbers if possible
+                    const numA = parseInt(a.chapterNumber);
+                    const numB = parseInt(b.chapterNumber);
+                    
+                    if (!isNaN(numA) && !isNaN(numB)) {
+                        return numB - numA; // Descending order
+                    }
+                    
+                    // Fall back to string comparison
+                    return b.chapterNumber.localeCompare(a.chapterNumber);
+                });
             });
-          });
-          // Sort series by most recent chapter
-          const sortedSeries = Object.entries(seriesMap).sort((a, b) => {
-            const latestA = a[1][0].timestamp;
-            const latestB = b[1][0].timestamp;
-            return latestB - latestA;
-          });
-          // Populate the filter dropdown
-          const filterSelect = document.getElementById('seriesFilter');
-          filterSelect.innerHTML = '<option value="all">All Series</option>';
-          sortedSeries.forEach(([seriesName]) => {
-            const formattedName = formatSeriesName(seriesName);
-            const option = document.createElement('option');
-            option.value = seriesName;
-            option.textContent = formattedName;
-            filterSelect.appendChild(option);
-          });
-          // Display the manga
-          displayManga(sortedSeries);
-          // Set up event listeners
-          filterSelect.addEventListener('change', () => {
-            const selectedSeries = filterSelect.value;
-            if (selectedSeries === 'all') {
-              displayManga(sortedSeries);
-            } else {
-              const filtered = sortedSeries.filter(([series]) => series === selectedSeries);
-              displayManga(filtered);
-            }
-          });
-          document.getElementById('refreshButton').addEventListener('click', () => {
-            loadMangaList();
-          });
-        } catch (error) {  
-}}
-      // Function to populate the 3D carousel with series names
-      function populateSeriesCards(seriesList) {
+            
+            // Sort series by most recent chapter
+            const sortedSeries = Object.entries(seriesMap).sort((a, b) => {
+                const latestA = a[1][0].timestamp;
+                const latestB = b[1][0].timestamp;
+                return latestB - latestA;
+            });
+            
+            // Populate the filter dropdown
+            const filterSelect = document.getElementById('seriesFilter');
+            filterSelect.innerHTML = '<option value="all">All Series</option>';
+            
+            sortedSeries.forEach(([seriesName]) => {
+                const formattedName = formatSeriesName(seriesName);
+                const option = document.createElement('option');
+                option.value = seriesName;
+                option.textContent = formattedName;
+                filterSelect.appendChild(option);
+            });
+            
+            // Display the manga
+            displayManga(sortedSeries);
+            
+            // Set up event listeners
+            filterSelect.addEventListener('change', () => {
+                const selectedSeries = filterSelect.value;
+                if (selectedSeries === 'all') {
+                    displayManga(sortedSeries);
+                } else {
+                    const filtered = sortedSeries.filter(([series]) => series === selectedSeries);
+                    displayManga(filtered);
+                }
+            });
+            
+            document.getElementById('refreshButton').addEventListener('click', () => {
+                loadMangaList();
+            });
+            
+        } catch (error) {
+            console.error('Error loading list:', error);
+            document.getElementById('mangaGrid').innerHTML = `
+                <div class="col-span-full text-center p-8 bg-red-900 bg-opacity-30 rounded">
+                    <p class="text-xl">Failed to load manga data. Please check that state.json exists.</p>
+                    <p class="mt-2 text-gray-400">${error.message}</p>
+                    <button id="retryButton" class="mt-4 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded">
+                        Retry Loading
+                    </button>   
+                </div>
+            `;
+
+            // retry button 
+            document.getElementById('retryButton').addEventListener('click', () => {
+                loadMangaList();
+            });
+        }
+    }
+
+    // Function to populate the 3D carousel with series names
+    function populateSeriesCards(seriesList) {
         const cardsContainer = document.getElementById('seriesCards');
         cardsContainer.innerHTML = '';
         // Take up to 10 series for the 3D carousel
         const seriesToShow = seriesList.slice(0, 10);
         seriesToShow.forEach(([seriesName]) => {
-          const cardDiv = document.createElement('div');
-          cardDiv.textContent = formatSeriesName(seriesName);
-          cardsContainer.appendChild(cardDiv);
+            const cardDiv = document.createElement('div');
+            cardDiv.textContent = formatSeriesName(seriesName);
+            cardsContainer.appendChild(cardDiv);
         });
         // If we have fewer than 10 series, fill with empty cards
         for (let i = seriesToShow.length; i < 10; i++) {
-          const emptyCard = document.createElement('div');
-          cardsContainer.appendChild(emptyCard);
+            const emptyCard = document.createElement('div');
+            cardsContainer.appendChild(emptyCard);
         }
-      }
-      // Function to display manga in the grid
-      function displayManga(seriesList) {
-  const mangaGrid = document.getElementById('mangaGrid');
-  mangaGrid.innerHTML = '';
-  
-  if (seriesList.length === 0) {
-    mangaGrid.innerHTML = `
-      <div class="col-span-full text-center p-8 bg-gray-800 rounded">
-        <p class="text-xl">No manga chapters found.</p>
-      </div>
-    `;
-    return;
-  }
+    }
 
-  seriesList.forEach(([seriesName, chapters]) => {
-    const formattedName = formatSeriesName(seriesName);
-    const seriesDiv = document.createElement('div');
-    seriesDiv.className = 'bg-gray-800 rounded-lg p-4 flex space-x-4';
-
-    // Create the card with image
-    const card = document.createElement('div');
-    card.className = 'card';
-    const cardInfo = document.createElement('div');
-    cardInfo.className = 'card-info';
-
-    // Add image
-    const img = document.createElement('img');
-    img.className = 'card-image';
-    // Set a default image URL and try to load the series-specific image
-    img.src = `images/${seriesName.toLowerCase()}.jpg`; // Adjust path as needed
-    img.onerror = () => {
-      img.src = 'images/default.jpg'; // Fallback image if series image doesn't exist
-    };
-    img.alt = formattedName;
+    // Function to display manga in the grid
+    function displayManga(seriesList) {
+        const mangaGrid = document.getElementById('mangaGrid');
+        mangaGrid.innerHTML = '';
+        
+        if (seriesList.length === 0) {
+            mangaGrid.innerHTML = `
+                <div class="col-span-full text-center p-8 bg-gray-800 rounded">
+                    <p class="text-xl">No chapters found.</p>
+                </div>
+            `;
+            return;
+        }
+        
+        seriesList.forEach(([seriesName, chapters]) => {
+            const formattedName = formatSeriesName(seriesName);
+            const seriesDiv = document.createElement('div');
+            seriesDiv.className = 'bg-gray-800 rounded-lg p-4 flex space-x-4';
+            
+            // Create the card with a default symbol instead of a cover image
+            const card = document.createElement('div');
+            card.className = 'card';
+            
+            const cardInfo = document.createElement('div');
+            cardInfo.className = 'card-info';
+            // Keep it empty and black as requested
+            card.appendChild(cardInfo);
+            
+            // Create content div
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'flex-1';
+            
+            // Create series title
+            const title = document.createElement('h2');
+            title.className = 'text-lg font-bold mb-2 text-purple-300';
+            title.textContent = formattedName;
+            
+            // Create chapter list
+            const chapterList = document.createElement('ul');
+            chapterList.className = 'text-sm space-y-2';
+            
+            // Only show up to 3 most recent chapters
+            chapters.slice(0, 3).forEach(chapter => {
+                const chapterItem = document.createElement('li');
+                chapterItem.className = 'flex items-center justify-between';
+                
+                // Create the link to the HTML file in the chapter's folder - with defensive check for path
+                const chapterPath = chapter.path || '';
+                const htmlLink = chapterPath ? 
+                    `./${chapterPath}/${seriesName.toLowerCase().replace(/\s+/g, '_')}_chapter_${chapter.chapterNumber}.html` :
+                    '#'; // Fallback link
+                
+                chapterItem.innerHTML = `
+                    <a href="${htmlLink}" class="text-purple-500 hover:text-purple-400 chapter-link">
+                        • Chapter ${chapter.chapterNumber}
+                    </a>
+                    <span class="text-gray-400">${chapter.formattedTime}</span>
+                `;
+                
+                chapterList.appendChild(chapterItem);
+            });
+            
+            // Assemble the manga item
+            contentDiv.appendChild(title);
+            contentDiv.appendChild(chapterList);
+            
+            seriesDiv.appendChild(card);
+            seriesDiv.appendChild(contentDiv);
+            
+            mangaGrid.appendChild(seriesDiv);
+        });
+        
+        // Populate the 3D carousel
+        populateSeriesCards(seriesList);
+    }
     
-    cardInfo.appendChild(img);
-    card.appendChild(cardInfo);
+    // Helper function to format series name (convert from snake_case to Title Case)
+    function formatSeriesName(seriesName) {
+        if (seriesName === 'Unknown Series') return seriesName;
+        
+        return seriesName
+            .split('_')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+    }
+    
+    // Helper function to format timestamps as "X time ago"
+    function getTimeAgo(timestamp) {
+        const now = new Date();
+        const diff = now - timestamp;
+        
+        const minutes = Math.floor(diff / 60000);
+        const hours = Math.floor(minutes / 60);
+        const days = Math.floor(hours / 24);
+        
+        if (days > 0) {
+            return `${days} day${days > 1 ? 's' : ''} ago`;
+        } else if (hours > 0) {
+            return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+        } else if (minutes > 0) {
+            return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+        } else {
+            return 'just now';
+        }
+    }
+    
+    // Load manga list when the page loads
+    document.addEventListener('DOMContentLoaded', loadMangaList);
+</script>
 
-    // Create content div
-    const contentDiv = document.createElement('div');
-    contentDiv.className = 'flex-1';
-
-    // Rest of your existing code for title and chapters...
-    const title = document.createElement('h2');
-    title.className = 'text-lg font-bold mb-2 text-purple-300';
-    title.textContent = formattedName;
-
-    const chapterList = document.createElement('ul');
-    chapterList.className = 'text-sm space-y-2';
-
-    chapters.slice(0, 7).forEach(chapter => {
-      const chapterItem = document.createElement('li');
-      chapterItem.className = 'flex items-center justify-between';
-      const chapterLink = chapter.githubPath ? `/${chapter.githubPath}` : '#';
-      chapterItem.innerHTML = `
-        <a href="${chapterLink}" class="text-purple-500 hover:text-purple-400 chapter-link">
-          • Chapter ${chapter.chapterNumber}
-        </a>
-        <span class="text-gray-400">${chapter.formattedTime}</span>
-      `;
-      chapterList.appendChild(chapterItem);
-    });
-
-    contentDiv.appendChild(title);
-    contentDiv.appendChild(chapterList);
-    seriesDiv.appendChild(card);
-    seriesDiv.appendChild(contentDiv);
-    mangaGrid.appendChild(seriesDiv);
-  });
-
-  populateSeriesCards(seriesList);
-}
-    </script>
-    <script>
-      document.body.style.zoom = "90%";
-    </script>
-  </body>
+<script>
+    document.body.style.zoom = "90%";
+</script>
+    
+</body>
 </html>
