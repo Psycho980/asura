@@ -1,5 +1,5 @@
 {
-  "lastStartNumber": 280160,
+  "lastStartNumber": 280170,
   "downloadedChapters": {
     "Revenge of the Iron-Blooded Swordhound_103": {
       "timestamp": "2025-03-13T12:18:44.488778",
@@ -25,6 +25,11 @@
       "timestamp": "2025-03-13T14:58:53.050207",
       "imageCount": 21,
       "githubPath": "series/unknown_series/chapter_120"
+    },
+    "The World After The End_171": {
+      "timestamp": "2025-03-13T15:40:49.473223",
+      "imageCount": 10,
+      "githubPath": "series/the_world_after_the_end/chapter_171"
     }
   }
 }
