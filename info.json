@@ -22,6 +22,17 @@
     ]
   },
   {
+    "series": "The World After The End",
+    "chapters": [
+      {
+        "chapter": 171,
+        "startNumber": 280161,
+        "frameCount": 10,
+        "filePattern": "00-optimized.webp"
+      }
+    ]
+  },
+  {
     "series": "Unknown Series",
     "chapters": [
       {
