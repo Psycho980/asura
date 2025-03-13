@@ -11,6 +11,17 @@
     ]
   },
   {
+    "series": "SSS-Class Suicide Hunter",
+    "chapters": [
+      {
+        "chapter": 130,
+        "startNumber": 280189,
+        "frameCount": 11,
+        "filePattern": "00-optimized.webp"
+      }
+    ]
+  },
+  {
     "series": "The Hero Returns",
     "chapters": [
       {
