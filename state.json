@@ -1,5 +1,5 @@
 {
-  "lastStartNumber": 280268,
+  "lastStartNumber": 280281,
   "downloadedChapters": {
     "Revenge of the Iron-Blooded Swordhound_103": {
       "timestamp": "2025-03-13T12:18:44.488778",
@@ -45,6 +45,11 @@
       "timestamp": "2025-03-14T00:03:29.319173",
       "imageCount": 18,
       "githubPath": "series/unknown_series/chapter_27"
+    },
+    "The Terminally Ill Young Master_48": {
+      "timestamp": "2025-03-14T01:09:45.081621",
+      "imageCount": 13,
+      "githubPath": "series/the_terminally_ill_young_master/chapter_48"
     }
   }
 }
